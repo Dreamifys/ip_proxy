@@ -13,7 +13,6 @@
 第四步：睡眠一定时间；
 第五步：开始验证数据库中的IP，根据每个IP的历史失败数和失败率淘汰掉一些低质量或失效的代理IP;
 第六步：验证完数据库中的IP，如果数据库中的IP小于一个预设值(比如100)，执行第一步，否则执行第四步。
-![这里写图片描述](http://img.blog.csdn.net/20170222220015846?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2FuemhleXU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 ##部署
 - os：Centos7
@@ -24,13 +23,11 @@
 完成以上系统和软件的安装，其中操作系统可以选择其他linux版本，软件版本没有特殊要求。
 
 ###克隆代码到本地
-	$ git clone https://github.com/clelandgt/ip_proxy
 
 ### 创建虚拟环境
 	$ mkvirtualenv proxy_env #创建名为proxy_env的虚拟环境
 	$ workon proxy_env #加载proxy_env虚拟环境
 	$ pip install -r requirements.txt #导入并安装需要安装的第三方库
-关于虚拟环境的详细介绍和使用详见：http://blog.csdn.net/ganzheyu/article/details/53014726
 
 ### supervisord
 使用supervisord进行进程管理，当进程出现异常退出时，supervisord会重新启动该进程。
@@ -62,5 +59,3 @@
 	$ systemctl enabled mongod.service #设置mongodb开机自启
 	$ systemctl enabled nginx.service #设置nginx开机自启
 
-关于systemctl详细使用见：http://blog.csdn.net/ganzheyu/article/details/56335419
-# ip_proxy
